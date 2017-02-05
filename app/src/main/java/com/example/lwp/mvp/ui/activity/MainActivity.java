@@ -11,14 +11,14 @@ import com.example.lwp.mvp.ui.activity.presenter.MainActivityPresenter;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 
 public class MainActivity extends BaseActivity {
 
-    @InjectView(R.id.tv)
-    TextView textView;
+    @BindView(R.id.tv)
+    public TextView textView;
 
     @Inject
     MainActivityPresenter presenter;
@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         presenter.showUserName();
 
     }
